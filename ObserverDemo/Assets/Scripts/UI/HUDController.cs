@@ -16,6 +16,8 @@ public class HUDController : MonoBehaviour
     [Space]
     private Image[] shipImages;
 
+    private GameSceneController gameSceneController;
+
     #endregion
 
     #region Startup
@@ -25,6 +27,18 @@ public class HUDController : MonoBehaviour
         statusText.gameObject.SetActive(false);
     }
 
+    private void Start()
+    {
+        gameSceneController = FindObjectOfType<GameSceneController>();
+
+        gameSceneController.ScoreUpdateOnKill += GameSceneController_ScoreUpdateOnKill;
+        gameSceneController.LifeLost += HideShip;
+    }
+
+    private void GameSceneController_ScoreUpdateOnKill (int pointValue)
+    {
+        UpdateScore(pointValue);
+    }
     #endregion
 
     #region Public methods

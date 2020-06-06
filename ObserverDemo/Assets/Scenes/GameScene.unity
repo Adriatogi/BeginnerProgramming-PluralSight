@@ -204,7 +204,7 @@ MonoBehaviour:
 --- !u!199 &465115135
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5026,16 +5026,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9085529995821107367, guid: 729a3fa1cc0894c73bff51d5094fcc94,
-        type: 3}
-      propertyPath: m_Name
-      value: HUD
-      objectReference: {fileID: 0}
-    - target: {fileID: 9085529995821107367, guid: 729a3fa1cc0894c73bff51d5094fcc94,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5603365420853893713, guid: 729a3fa1cc0894c73bff51d5094fcc94,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5140,6 +5130,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468836009529650403, guid: 729a3fa1cc0894c73bff51d5094fcc94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 56.299988
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468836009529650403, guid: 729a3fa1cc0894c73bff51d5094fcc94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -54.69995
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085529995821107367, guid: 729a3fa1cc0894c73bff51d5094fcc94,
+        type: 3}
+      propertyPath: m_Name
+      value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085529995821107367, guid: 729a3fa1cc0894c73bff51d5094fcc94,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 729a3fa1cc0894c73bff51d5094fcc94, type: 3}
