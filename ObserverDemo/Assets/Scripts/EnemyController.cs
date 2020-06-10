@@ -3,7 +3,7 @@ using UnityEngine;
 
 public delegate void EnemyDestroyedHandler(int pointValue);
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IEndGameObserver
 {
     #region Field Declarations
 
@@ -78,7 +78,7 @@ public class EnemyController : MonoBehaviour
             EnemyDestroyed(pointValue);
         }
 
-        Destroy(gameObject);
+         removeAndDestroy();
     }
 
     #endregion
@@ -108,6 +108,13 @@ public class EnemyController : MonoBehaviour
 
     #endregion
 
+    private void removeAndDestroy()
+    {
+        GameSceneController gameSceneController = FindObjectOfType<GameSceneController>();
+        gameSceneController.RemoveObserver(this);
+        Destroy(gameObject);
+    }
+
     #region Anger management
 
     IEnumerator AngerCountDown()
@@ -125,4 +132,9 @@ public class EnemyController : MonoBehaviour
     }
 
     #endregion
+
+    public void Notify()
+    {
+        Destroy(gameObject);
+    }
 }

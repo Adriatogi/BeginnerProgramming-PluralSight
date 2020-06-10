@@ -5131,6 +5131,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8086990538450250498, guid: 729a3fa1cc0894c73bff51d5094fcc94,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8468836009529650403, guid: 729a3fa1cc0894c73bff51d5094fcc94,
         type: 3}
       propertyPath: m_AnchoredPosition.x
