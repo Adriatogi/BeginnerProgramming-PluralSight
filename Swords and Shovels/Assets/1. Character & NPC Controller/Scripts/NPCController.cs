@@ -37,12 +37,18 @@ public class NPCController : MonoBehaviour
         animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, aggroRange);
+    }
 
     IEnumerator tick()
     {
+        agent.speed = agent.speed / 2;
+
         while (true)
         {
-            agent.speed = agent.speed / 2;
             agent.destination = waypoints[index].position;
 
             if(player != null && Vector3.Distance(transform.position, player.position) < aggroRange)
@@ -58,9 +64,11 @@ public class NPCController : MonoBehaviour
     {
         while (true)
         {
-        index = index == waypoints.Length - 1 ? 0 : index + 1;
+            index = index == waypoints.Length - 1 ? 0 : index + 1;
 
-        yield return new WaitForSeconds(patrolTime);
+            float randomOffset = Random.Range(0, patrolTime);
+
+            yield return new WaitForSeconds(patrolTime + randomOffset);
         }
     }
 }
