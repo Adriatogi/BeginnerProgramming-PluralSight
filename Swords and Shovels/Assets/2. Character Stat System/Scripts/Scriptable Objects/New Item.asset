@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44944f615e273f44eb8ddd47cd12302b, type: 3}
   m_Name: New Item
   m_EditorClassIdentifier: 
+  itemType: 0
+  itemArmorSubType: 0
   itemAmount: 0

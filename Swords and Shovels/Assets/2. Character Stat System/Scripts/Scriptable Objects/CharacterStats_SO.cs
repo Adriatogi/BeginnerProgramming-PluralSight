@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+//using UnityEditor;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 [CreateAssetMenu(fileName = "NewStats", menuName = "Character/Stats", order = 1)]
 
@@ -14,7 +16,7 @@ public class CharacterStats_SO : ScriptableObject
         public int maxWealth;
         public int baseDamage;
         public float baseResistance;
-        public float maxEmcumbrance;
+        public float maxEncumbrance;
     }
 
     #region Fields
@@ -46,7 +48,8 @@ public class CharacterStats_SO : ScriptableObject
     public float baseResistance = 0f;
     public float currentResistance = 0f;
 
-    public float currentEmcumbrance = 0f;
+    public float maxEncumbrance = 0f;
+    public float currentEncumbrance = 0f;
 
     public int charExperience = 0;
     public int charLevel = 0;
@@ -217,5 +220,23 @@ public class CharacterStats_SO : ScriptableObject
         //Display the Death Visualization
     }
 
+    private void levelUp()
+    {
+        maxHealth = charLevelUps[charLevel-1].maxHealth;
+        maxMana = charLevelUps[charLevel - 1].maxMana;
+        maxWealth = charLevelUps[charLevel - 1].maxWealth;
+        baseDamage = charLevelUps[charLevel-1].baseDamage;
+        baseResistance = charLevelUps[charLevel-1].baseResistance;
+        maxEncumbrance = charLevelUps[charLevel-1].maxEncumbrance;
+}
+    #endregion
+
+    #region SaveCharacterData
+
+    public void saveCharacterData()
+    {
+        //saveDataOnClose = true;
+        //EditorUtility.SetDirty(this);
+    }
     #endregion
 }
